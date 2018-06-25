@@ -1,18 +1,21 @@
-import React, {Component} from "react";
+import React from "react";
 
-class Pics extends Component {
-  handleInput = event => {
-    event.preventDefault();
-  }
-  render() {
-return (
+const Pics = props => (
   <div className="container">
-                <footer className="row">
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                       {this.props.images}
-                    </div>
-                </footer>
-            </div>
+      <div 
+        className="row"
+        value={props.id}
+        onClick={()=> props.handleClick(props.id)}>
+      
+      <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      
+      <img 
+        alt={props.id}
+        src={props.image} 
+      />
+      </div>
+      </div>
+  </div>
 )
-}};
+
 export default Pics;
